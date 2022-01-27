@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { BlackButton } from '../components/BlackButton';
 import { PermissionsContext } from '../context/PermissionsContext';
 
