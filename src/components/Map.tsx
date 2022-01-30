@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import MapView from 'react-native-maps';
+import { useLocation } from '../hooks/useLocation';
+import LoadingScreen from '../screens/LoadingScreen';
 
 const Map = () => {
+
+    const {hasLocation, initialPosition} = useLocation();
+
+    if (!hasLocation) return <LoadingScreen />;
+
     return (
         <>
             <MapView
                 showsUserLocation
                 style={{ flex: 1 }}
                 initialRegion={{
-                    latitude: 18.5119389,
-                    longitude: -69.8656178,
+                    latitude: initialPosition!.latitude,
+                    longitude: initialPosition!.longitude,
                     latitudeDelta: 0.0922,
                     longitudeDelta: 0.0421,
                 }}
-                
+
             >
 
                 {/* <Marker
